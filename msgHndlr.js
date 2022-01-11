@@ -5,10 +5,10 @@ const {getBuffer} = require('./lib/functions')
 const {fetchJson} = require('./lib/fetcher')
 const fs = require('fs')
 const config = JSON.parse(fs.readFileSync('./config.json'))
-let ownerNumber = config.ownerNumber
+let ownerNumber = config.085875158135
 const getPP = async (jid) => {
 	try {
-					ppnya = await benny.getProfilePicture(jid)
+					ppnya = await beerus.getProfilePicture(jid)
 				} catch {
 					ppnya = 'https://i.ibb.co/0qDXtBb/c8ef383d9fa8.jpg'
 				}
@@ -26,9 +26,9 @@ const msga = (message) => {
 /**DATABASE*/
 var presen = false
 var pren = 'composing'
-var namabot = 'BennyBOT'
+var namabot = 'BeerusBOT'
 
-module.exports = benny = async(benny, ben) => {
+module.exports = beerus = async(beerus, rus) => {
 	try {
 		if (!ben.hasNewMessage) return
         ben = ben.messages.all()[0]
@@ -56,7 +56,7 @@ let command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
 		const arg = body.slice(command.length+2)
 		
 		 const reply = async(teks) => {
-			 benny.sendMessage(from, teks, text, {quoted: ben})
+			 benny.sendMessage(from, teks, text, {quoted: rus})
 		 }
 	
 	mess = {
@@ -64,7 +64,7 @@ let command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
 			success: 'Berhasil!',
 			error: {
 				stick: 'Maaf, terjadi kesalahan saat convert gambar ke sticker',
-				Iv: 'Linknya mati:v',
+				Iv: 'Linknya mati',
 				api: 'Error'
 			},
 			only : {
@@ -72,10 +72,10 @@ let command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
 				Registered: `Kamu belum terdaftar di database!\n\nSilakan register dengan format:\n*${prefix}daftar*\n\nNote:\nHarap save nomor ku agar bisa mendapatkan serial!!`,
 				group: 'Grup only bruh...',
 				ownerG: 'Owner grup only bruh...',
-				ownerB: `*[ Khusus owner ${namabot} ]*`,
-				creator: `*[ Khusus creator ${namabot} ]*`,
+				ownerB: `*[ Khusus owner ${beerus} ]*`,
+				creator: `*[ Khusus creator ${beerus} ]*`,
 				admin: '*[ Khusus admin group ]*',
-				premium: `Premium user only bruh...\nMau jadi user premium?\nChat wa.me/6289636006352`,
+				premium: `Premium user only bruh...\nMau jadi user premium?\nChat wa.me/6285875158135`,
 				Badmin: 'Jadikan bot admin terlebih dahulu!'
 			}
 		}
@@ -89,7 +89,7 @@ let command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
 		case 'menu':
 		case 'help':
 				let poy = 1
-	menunye = `*Hai kak ${pushname} ${decodeURI('%F0%9F%91%8B')}*\n*Nama aku adalah*\n*${namabot}*\n*Source: https://github.com/bennysolo/BennyBOTWA*\n*Aku terdapat beberapa fitur yang sangat berguna*\n*Dibawah ini:*
+	menunye = `*Hai kak ${pushname} ${decodeURI('%F0%9F%91%8B')}*\n*Nama aku adalah*\n*${beerus}*\n*Source: https://github.com/hermna/BeerusBOTWA*\n*Aku terdapat beberapa fitur yang sangat berguna*\n*Dibawah ini:*
 *${poy++}.* ${prefix}presence on
 *${poy++}.* ${prefix}presence off
 *${poy++}.* ${prefix}setrecording
@@ -138,12 +138,12 @@ break
 case 'owner':
 const vcard = 'BEGIN:VCARD\n'
             + `VERSION:3.0\n`
-            + `FN:Owner ${namabot} \n` // GANTI NAMA LU
-            + `ORG:Owner ${namabot};\n`
-            + `TEL;type=CELL;type=VOICE;waid=${ownerNumber.replace('@s.whatsapp.net', '')}:+${ownerNumber.replace('@s.whatsapp.net', '')}\n` // GANTI NOMOR LU
+            + `FN:Owner ${beerus} \n` // Hermna YY
+            + `ORG:Hermna ${beerus};\n`
+            + `TEL;type=CELL;type=VOICE;waid=${ownerNumber.replace('@s.whatsapp.net', '')}:+${6285875158135.replace('@s.whatsapp.net', '')}\n` // 
             + `END:VCARD`
-			anub = await benny.sendMessage(from, {displayName: `Owner ${namabot}`, vcard: vcard}, contact, {quoted: ben})
-			benny.sendMessage(from, 'Itu nomor ownerku', text, {quoted: anub})
+			anub = await benny.sendMessage(from, {displayName: `Hermna ${Beerus}`, vcard: vcard}, contact, {quoted: ben})
+			beerus.sendMessage(from, 'Itu nomor ownerku', text, {quoted: anub})
 			break
 			if (!isOwner) return reply(mess.only.owner)
 			case 'setrecording':
@@ -154,3 +154,4 @@ reply('*Presence telah diubah menjadi recording!*')
 	console.log(String(e))
 		}
 		}
+
